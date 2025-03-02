@@ -1,0 +1,26 @@
+import fileResume from '../../assets/Resume.pdf';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faThumbsUp } from '@fortawesome/free-regular-svg-icons';
+import { data } from '../../contents/header';
+const Header = () => {
+    return (
+        <div flex flex-col gap-2>
+                    <div className='text-left text-3xl text-primaryTitle font-semibold'>{data.name}</div>
+                    <div className='text-left text-primaryAccent font-semibold'>{data.title}</div>
+                    <div className='text-left text-sm w-5/6'>{data.caption}</div>
+                    <div className='text-left mt-4'>
+                     <a href={data.link} target='_blank'>
+                      <span className='rounded-lg bg-primaryTitle text-gray-200 py-2 px-4'>
+                          {data.btnText}
+                          <span className='rotate-0 inline-block ml-2 text-sm'>
+                            <FontAwesomeIcon className='animate-bounce' icon={faThumbsUp}/>
+                          </span>
+                        </span>
+                      </a>
+                    </div>
+                    
+                  </div>
+    )
+}
+
+export default Header;
